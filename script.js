@@ -37,3 +37,37 @@ const populateDrivers = async (season) => {
   });
 };
 
+// Fetch and display driver stats
+const showDriverCard = async (season, driverId) => {
+    const url = `https://ergast.com/api/f1/${season}/driverStandings.json`;
+    const data = await fetchData(url);
+    const standings = data.MRData.StandingsTable.StandingsLists[0]?.DriverStandings;
+  
+    if (!standings) {
+      driverCard.innerHTML = `<p>No data found for this season.</p>`;
+      driverCard.classList.remove('hidden');
+      return;
+    }
+  
+    const driverData = standings.find(d => d.Driver.driverId === driverId);
+  
+    if (!driverData) {
+      driverCard.innerHTML = `<p>No stats available for this driver in ${season}.</p>`;
+      driverCard.classList.remove('hidden');
+      return;
+    }
+  
+    const { Driver, Constructors, points, wins, position } = driverData;
+  
+    driverCard.innerHTML = `
+      <h2>${Driver.givenName} ${Driver.familyName} (${Driver.code || driverId.toUpperCase()})</h2>
+      <p><span class="label">Nationality:</span> ${Driver.nationality}</p>
+      <p><span class="label">Date of Birth:</span> ${Driver.dateOfBirth}</p>
+      <p><span class="label">Team:</span> ${Constructors[0]?.name}</p>
+      <p><span class="label">Points:</span> ${points}</p>
+      <p><span class="label">Wins:</span> ${wins}</p>
+      <p><span class="label">Standing:</span> ${position}</p>
+    `;
+  
+    driverCard.classList.remove('hidden');
+  };
