@@ -73,10 +73,131 @@ body {
     border-radius: 10px;
     padding: 1.5rem;
     box-shadow: 0 0 10px #ff1e1e22;
+    text-align: center;
   }
   
   .hidden {
     display: none;
   }
 
-  
+  /* Add these to your styles.css */
+
+main {
+    max-width: 800px;
+    margin: auto;
+    padding: 1rem;
+    padding: 0 1rem; /* Added padding */
+}
+
+.banner img {
+    width: 100%;
+    display: block;
+}
+
+.image-text-section {
+    display: flex;
+    align-items: center;
+    padding: 2rem;
+    flex-wrap: wrap;
+}
+
+.image-text-content {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    justify-content: space-around;
+}
+
+.image-text-content img {
+    max-width: 45%;
+    height: auto;
+    border-radius: 8px;
+}
+
+.image-text-content .text-content {
+    max-width: 45%;
+    padding: 1rem;
+}
+
+.team-carousel {
+    padding: 2rem 0;
+    text-align: center;
+}
+
+.carousel-container {
+    overflow: hidden;
+    width: 100%;
+}
+
+.carousel-track {
+    display: flex;
+    animation: scroll 20s linear infinite;
+}
+
+.carousel-track img {
+    height: 100px;
+    margin: 0 10px;
+}
+
+@keyframes scroll {
+    0% { transform: translateX(0); }
+    100% { transform: translateX(-100%); }
+}
+
+footer {
+    background-color: #1a1a1a;
+    color: #ccc;
+    text-align: center;
+    padding: 1rem;
+}
+
+footer a {
+    color: #ccc;
+    text-decoration: none;
+    margin: 0 10px;
+}
+
+.contact-form {
+    background-color: #1a1a1a;
+    padding: 2rem;
+    border-radius: 8px;
+    margin-bottom: 2rem;
+}
+
+.contact-form h2 {
+    text-align: center;
+    margin-bottom: 1.5rem;
+}
+
+.contact-form input, .contact-form textarea {
+    width: calc(100% - 22px);
+    padding: 10px;
+    margin-bottom: 1rem;
+    background-color: #222;
+    color: #fff;
+    border: 1px solid #444;
+    border-radius: 5px;
+}
+
+.contact-form button {
+    background-color: #ff1e1e;
+    color: #fff;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    width: 100%;
+}
+
+@media (max-width: 768px) {
+    nav ul {
+        flex-direction: column;
+        align-items: center;
+    }
+    .image-text-content {
+        flex-direction: column;
+    }
+    .image-text-content img, .image-text-content .text-content {
+        max-width: 90%;
+    }
+}
