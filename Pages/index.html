@@ -3,25 +3,40 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>F1 Insights Hub - Home</title>
+  <title>F1 Insights Hub - Drivers</title>
   <link rel="stylesheet" href="css/styles.css" />
 </head>
 <body>
   <header>
     <nav>
       <ul>
-        <li><a href="index.html">Drivers</a></li>
+        <li><a class="active" href="index.html">Drivers</a></li>
         <li><a href="schedule.html">Schedule</a></li>
         <li><a href="standings.html">Standings</a></li>
         <li><a href="circuits.html">Circuits</a></li>
         <li><a href="history.html">History</a></li>
       </ul>
     </nav>
-    <h1>F1 Insights Hub</h1>
+    <h1>F1 Driver Stats</h1>
   </header>
 
   <main>
-    <!-- Page-specific content here -->
+    <section class="controls">
+      <label for="season">Season:</label>
+      <select id="season"></select>
+
+      <label for="driver">Driver:</label>
+      <select id="driver"></select>
+    </section>
+
+    <section id="driver-card" class="driver-card hidden">
+      <h2 id="driver-name"></h2>
+      <p><strong>Nationality:</strong> <span id="driver-nationality"></span></p>
+      <p><strong>Date of Birth:</strong> <span id="driver-dob"></span></p>
+      <p><strong>Permanent Number:</strong> <span id="driver-number"></span></p>
+      <p><strong>Wins:</strong> <span id="driver-wins"></span></p>
+      <p><strong>Team:</strong> <span id="driver-team"></span></p>
+    </section>
   </main>
 
   <footer>
@@ -29,6 +44,6 @@
   </footer>
 
   <script src="js/main.js"></script>
-  <script src="js/drivers.js"></script> <!-- change per page -->
+  <script src="js/drivers.js"></script>
 </body>
 </html>
