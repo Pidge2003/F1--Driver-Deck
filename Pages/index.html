@@ -30,12 +30,18 @@
     </section>
 
     <section id="driver-card" class="driver-card hidden">
-      <h2 id="driver-name"></h2>
-      <p><strong>Nationality:</strong> <span id="driver-nationality"></span></p>
-      <p><strong>Date of Birth:</strong> <span id="driver-dob"></span></p>
-      <p><strong>Permanent Number:</strong> <span id="driver-number"></span></p>
-      <p><strong>Wins:</strong> <span id="driver-wins"></span></p>
-      <p><strong>Team:</strong> <span id="driver-team"></span></p>
+      <div class="driver-header">
+        <img id="driver-photo" src="" alt="Driver Photo" />
+        <div>
+          <h2 id="driver-name"></h2>
+          <p><strong>Nationality:</strong> <span id="driver-nationality"></span> <span id="flag"></span></p>
+          <p><strong>Date of Birth:</strong> <span id="driver-dob"></span></p>
+          <p><strong>Permanent Number:</strong> <span id="driver-number"></span></p>
+          <p><strong>Wins:</strong> <span id="driver-wins"></span></p>
+          <p><strong>Team:</strong> <span id="driver-team"></span></p>
+        </div>
+      </div>
+      <canvas id="winsChart" width="400" height="200"></canvas>
     </section>
   </main>
 
@@ -43,3 +49,4 @@
   <script src="/js/drivers.js"></script>
 </body>
 </html>
+
