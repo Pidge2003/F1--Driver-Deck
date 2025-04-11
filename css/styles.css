@@ -78,12 +78,5 @@ body {
   .hidden {
     display: none;
   }
-  
-  footer {
-    text-align: center;
-    margin-top: 4rem;
-    padding: 1rem;
-    font-size: 0.9rem;
-    color: #888;
-  }
+
   
