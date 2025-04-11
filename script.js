@@ -71,3 +71,26 @@ const showDriverCard = async (season, driverId) => {
   
     driverCard.classList.remove('hidden');
   };
+
+  // Event listeners
+seasonSelect.addEventListener('change', () => {
+    const season = seasonSelect.value;
+    populateDrivers(season);
+    driverCard.classList.add('hidden');
+  });
+  
+  driverSelect.addEventListener('change', () => {
+    const season = seasonSelect.value;
+    const driverId = driverSelect.value;
+    if (driverId) {
+      showDriverCard(season, driverId);
+    } else {
+      driverCard.classList.add('hidden');
+    }
+  });
+  
+  // Init on load
+  (async () => {
+    populateSeasons();
+    await populateDrivers(seasonSelect.value);
+  })();
