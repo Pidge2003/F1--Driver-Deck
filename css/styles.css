@@ -193,3 +193,37 @@ footer a {
         max-width: 90%;
     }
 }
+
+/* Schedule Page Specific */
+.schedule-list {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+  }
+  
+  .race-card {
+    background-color: #1a1a1a;
+    border-left: 5px solid #ff1e1e;
+    padding: 1.5rem;
+    border-radius: 10px;
+    box-shadow: 0 0 10px #ff1e1e22;
+    transition: transform 0.2s ease;
+  }
+  
+  .race-card:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 0 15px #ff1e1e55;
+  }
+  
+  .race-card h3 {
+    margin-top: 0;
+    margin-bottom: 0.5rem;
+    color: #ff1e1e;
+    font-size: 1.25rem;
+  }
+  
+  .race-card p {
+    margin: 0.3rem 0;
+    color: #ddd;
+  }
+  
