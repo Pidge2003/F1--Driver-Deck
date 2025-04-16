@@ -1,5 +1,5 @@
-const raceSchedule = document.getElementById('schedule-list')
-const seasonSelect = document.getElementById('season')
+const raceSchedule = document.getElementById('season')
+const seasonSelect = document.getElementById('schedule-list')
 
 const populateSchedule = () => {
     const currentYear = new Date().getFullYear();
@@ -49,3 +49,5 @@ const displayRaces = (races) => {
 seasonSelect.addEventListener('change', function(){
     const selectedSeason = seasonSelect.value;
 });
+
+populateSchedule();
