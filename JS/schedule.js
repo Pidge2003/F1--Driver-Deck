@@ -1,5 +1,5 @@
-const raceSchedule = document.getElementById('season')
-const seasonSelect = document.getElementById('schedule-list')
+const raceSchedule = document.getElementById('schedule-list')
+const seasonSelect = document.getElementById('season')
 
 const populateSchedule = () => {
     const currentYear = new Date().getFullYear();
@@ -7,9 +7,9 @@ const populateSchedule = () => {
         const choice = document.createElement("option");
         choice.value = year;
         choice.textContent = year; 
-        raceSchedule.appendChild(choice);
+        seasonSelect.appendChild(choice);
     }
-    raceSchedule.value = currentYear;
+    seasonSelect.value = currentYear;
 };
 
 const fetchRaceData = async (season) => {
@@ -46,8 +46,10 @@ const displayRaces = (races) => {
 };
 
 
-seasonSelect.addEventListener('change', function(){
+seasonSelect.addEventListener('change', async () => {
     const selectedSeason = seasonSelect.value;
+    const races = await fetchRaceData(selectedSeason);
+    displayRaces(races);
 });
 
 populateSchedule();
