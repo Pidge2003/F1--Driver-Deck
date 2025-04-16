@@ -21,7 +21,29 @@ const fetchRaceData = async (season) => {
         console.error('Error fetching race data:', error);
         return []; // Return an empty array in case of error
     }
-}
+};
+
+const displayRaces = (races) => {
+    raceSchedule.innerHTML = ''; // Clear the previous race list
+    if (races.length === 0) {
+        raceSchedule.innerHTML = '<p>No races found for this season.</p>';
+        return;
+    }
+
+    races.forEach(race => {
+        const raceCard = document.createElement('div');
+        raceCard.classList.add('race-card');
+        
+        raceCard.innerHTML = `
+            <h3>Round ${race.round}: ${race.raceName}</h3>
+            <p><strong>Date:</strong> ${race.date} ${race.time ? `@ ${race.time.replace('Z', '')}` : ''}</p>
+            <p><strong>Location:</strong> ${race.Circuit.Location.locality}, ${race.Circuit.Location.country}</p>
+            <p><strong>Circuit:</strong> ${race.Circuit.circuitName}</p>
+        `;
+
+        raceSchedule.appendChild(raceCard);
+    });
+};
 
 
 seasonSelect.addEventListener('change', function(){
