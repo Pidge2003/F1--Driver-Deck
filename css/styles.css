@@ -14,7 +14,7 @@ body {
 /* Header Section */
 header {
     text-align: center;
-    padding: 0.5rem;
+    padding: 1rem;
     background: linear-gradient(to right, #222222, #444444);
     display: flex;
     flex-direction: row;
@@ -60,6 +60,14 @@ nav a.active, nav a:hover {
     width: 100%;
     display: block;
     height: 550px;
+    object-fit: cover;
+    object-position: center;
+}
+
+.banner-2 img {
+    width: 100%;
+    display: block;
+    height: 450px;
     object-fit: cover;
     object-position: center;
 }
