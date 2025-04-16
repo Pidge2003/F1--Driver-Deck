@@ -108,11 +108,24 @@ main {
 
 .controls {
     display: flex;
+    flex-direction: column;
     gap: 1rem;
-    flex-wrap: wrap;
     margin-bottom: 2rem;
     align-items: center;
     justify-content: center;
+}
+
+.season-controls {
+    display: flex;
+    gap: 1rem;
+    flex-direction: column;
+    margin-bottom: 2rem;
+    align-items: center;
+    justify-content: center;
+}
+
+.season-controls h1{
+    color: #000;
 }
 
 select {
@@ -207,6 +220,7 @@ footer a {
     display: flex;
     flex-direction: column;
     gap: 1.5rem;
+    padding: 20px;
   }
   
   .race-card {
